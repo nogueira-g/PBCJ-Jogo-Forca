@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab1_Salvo.unity
     guid: 50d259db9c424c149afd62c5a503a337
+  - enabled: 1
+    path: Assets/Scenes/Lab1_Creditos.unity
+    guid: 85dbc22b53992a04ba961f9c83526dc2
   m_configObjects: {}

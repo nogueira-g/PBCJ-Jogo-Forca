@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
                     SceneManager.LoadScene("Lab1_Forca");
                 }
 
-                for (int i = 0; i <= tamanhoPalvaraSecreta; i++)
+                for (int i = 0; i <= tamanhoPalvaraSecreta - 1; i++)
                 {
                     if (! letrasDescobertas[i])
                     {
@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
         TextAsset t1 = (TextAsset)Resources.Load("palavras", typeof(TextAsset));
         string s = t1.text;
         string[] palavras = s.Split(' ');
-        int palavraAleatoria = Random.Range(0, palavras.Length + 1);
+        int palavraAleatoria = Random.Range(0, palavras.Length);
         return (palavras[palavraAleatoria]);
     }
 }
