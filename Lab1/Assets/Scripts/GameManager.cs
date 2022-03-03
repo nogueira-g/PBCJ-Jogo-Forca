@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     /*
     Toda vez que a letra digitada pertencer a palavra secreta, sua posição é descoberta na palavra e substituída em tela (do "?" para a letra em si)
     A cada nova jogada, a potuação do jogador é atualizada, junto ao seu número de tentativas
-    Caso Ultrapasse o número máximod e tentativas sem acertar, o jogador é enviado para a cena de forca
+    Caso Ultrapasse o número máximo de tentativas sem acertar, o jogador é enviado para a cena de forca
     */
     void CheckTeclado()
     {
@@ -93,11 +93,7 @@ public class GameManager : MonoBehaviour
                 numTentativas++;
                 UpdateNumTentativas();
 
-                if(numTentativas > maxNumTentativas)
-                {
-                    SceneManager.LoadScene("Lab1_Forca");
-                }
-
+                bool letraEncontrada = false;
                 for (int i = 0; i <= tamanhoPalvaraSecreta - 1; i++)
                 {
                     if (! letrasDescobertas[i])
@@ -105,6 +101,7 @@ public class GameManager : MonoBehaviour
                         letraTeclada = System.Char.ToUpper(letraTeclada);
                         if (letrasSecretas[i] == letraTeclada)
                         {
+                            letraEncontrada = true;
                             letrasDescobertas[i] = true;
                             GameObject.Find("letra" + (i + 1)).GetComponent<Text>().text = letraTeclada.ToString();
                             score = PlayerPrefs.GetInt("score");
@@ -115,7 +112,29 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
+                VerificaForca();
+                EfeitoSonoroPosTentativa(letraEncontrada);
             }
+        }
+    }
+
+    void VerificaForca()
+    {
+        if (numTentativas >= maxNumTentativas)
+        {
+            SceneManager.LoadScene("Lab1_Forca");
+        }
+    }
+
+    void EfeitoSonoroPosTentativa(bool letraEncontrada)
+    {
+        if (letraEncontrada)
+        {
+            GameObject.Find("rightSoundEffect").GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            GameObject.Find("wrongSoundEffect").GetComponent<AudioSource>().Play();
         }
     }
 

@@ -27,7 +27,7 @@ public class ManageBotoes : MonoBehaviour
     // mostra a página de créditos
     public void MostraCreditos()
     {
-        SceneManager.LoadScene("Lab1_Creditos");
+        SceneManager.LoadScene("Lab1_creditos");
     }
 
     //volta ao menu principal
