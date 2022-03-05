@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Lab1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Lab1_start.unity
     guid: c6d692e49e6dafd48883b5f2e298c79f
+  - enabled: 1
+    path: Assets/Scenes/Lab1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Lab1_Forca.unity
     guid: b5f1500767cef154082177ce3273052c
@@ -18,6 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Lab1_Salvo.unity
     guid: 50d259db9c424c149afd62c5a503a337
   - enabled: 1
-    path: Assets/Scenes/Lab1_Creditos.unity
+    path: Assets/Scenes/Lab1_creditos.unity
     guid: 85dbc22b53992a04ba961f9c83526dc2
   m_configObjects: {}
